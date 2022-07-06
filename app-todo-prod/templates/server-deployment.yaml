@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Values.nameServer }}
+  namespace: {{ .Values.namespace }}
+  labels:
+    app: {{ .Values.nameServer }}
+spec:
+  replicas: {{ .Values.replicas }}
+  selector:
+    matchLabels:
+      app: {{ .Values.nameServer }}
+  template:
+    metadata:
+      labels:
+        app: {{ .Values.nameServer }}
+    spec:
+      containers:
+        - name: {{ .Values.nameServer }}
+          image: {{ .Values.imageServer }}
+          env:
+          - name: SERVER
+            value: mongodb://admin:danmerasahina@172.20.36.203:27017/todos  # di isi dengan endpoint mongo
+           

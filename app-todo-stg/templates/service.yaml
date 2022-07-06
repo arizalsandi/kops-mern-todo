@@ -1,0 +1,31 @@
+# Client Service
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ .Values.nameClient }}
+  labels:
+    app: {{ .Values.nameClient }}
+  namespace: {{ .Values.namespace }}
+spec:
+  type: ClusterIP
+  selector:
+    app: {{ .Values.nameClient }}
+  ports:
+    - port: 80
+  
+---
+#Server Service
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ .Values.nameServer }}
+  labels:
+    app: {{ .Values.nameServer }}
+  namespace: {{ .Values.namespace }}
+spec:
+  type: ClusterIP
+  selector:
+    app: {{ .Values.nameServer }}
+  ports:
+    - port: {{ .Values.portServer }}
+

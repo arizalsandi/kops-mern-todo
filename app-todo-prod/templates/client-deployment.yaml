@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Values.nameClient }}
+  namespace: {{ .Values.namespace }}
+  labels:
+    app: {{ .Values.nameClient }}
+spec:
+  replicas: {{ .Values.replicas }}
+  selector:
+    matchLabels:
+      app: {{ .Values.nameClient }}
+  template:
+    metadata:
+      labels:
+        app: {{ .Values.nameClient }}
+    spec:
+      containers:
+        - name: {{ .Values.nameClient }}
+          image: {{ .Values.imageClient }}
+           
