@@ -1,3 +1,3 @@
-app-todo-prod/secret.yaml
+app-todo-prod/templates/secret.yaml
 
-app-todo-stg/secret.yaml
+app-todo-stg/templates/secret.yaml
