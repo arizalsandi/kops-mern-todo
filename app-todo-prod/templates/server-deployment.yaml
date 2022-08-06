@@ -20,5 +20,5 @@ spec:
           image: {{ .Values.imageServer }}
           env:
           - name: SERVER
-            value: mongodb://admin:danmerasahina@172.20.36.203:27017/todos  # di isi dengan endpoint mongo
+            value: mongodb://{USERNAME}:{PASSWORD}@{IP}:{PORT}/todos  # di isi dengan endpoint mongo
            
