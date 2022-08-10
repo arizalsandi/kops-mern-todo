@@ -1,0 +1,11 @@
+nameClient: ""
+nameServer: ""
+imageClient: ""
+imageServer: ""
+portClient: ""
+portServer: ""
+portDb: ""
+namespace: ""
+hostClient: ""
+hostServer: ""
+replicas: 1
